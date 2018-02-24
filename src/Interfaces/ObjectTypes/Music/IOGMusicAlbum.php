@@ -5,7 +5,6 @@ namespace TractorCow\OpenGraph\Interfaces\ObjectTypes\Music;
 use SilverStripe\ORM\FieldType\DBDatetime;
 use TractorCow\OpenGraph\Interfaces\ObjectTypes\Other\IOGProfile;
 
-
 /**
  *
  * @author Damian Mooyman

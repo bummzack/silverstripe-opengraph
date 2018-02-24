@@ -2,7 +2,6 @@
 
 namespace TractorCow\OpenGraph\ObjectBuilders\Other;
 
-
 use TractorCow\OpenGraph\Interfaces\ObjectTypes\Other\IOGArticle;
 use TractorCow\OpenGraph\ObjectBuilders\OpenGraphBuilder;
 
@@ -25,5 +24,4 @@ class OGArticle extends OpenGraphBuilder
 
         $this->appendArticleTags($tags, $object);
     }
-
 }

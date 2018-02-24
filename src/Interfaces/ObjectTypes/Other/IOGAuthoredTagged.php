@@ -2,7 +2,6 @@
 
 namespace TractorCow\OpenGraph\Interfaces\ObjectTypes\Other;
 
-
 /**
  * @author Damian Mooyman
  */

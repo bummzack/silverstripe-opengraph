@@ -2,7 +2,6 @@
 
 namespace TractorCow\OpenGraph\ObjectBuilders\Other;
 
-
 use TractorCow\OpenGraph\Interfaces\ObjectTypes\Other\IOGBook;
 use TractorCow\OpenGraph\ObjectBuilders\OpenGraphBuilder;
 
@@ -23,5 +22,4 @@ class OGBook extends OpenGraphBuilder
 
         $this->appendBookTags($tags, $object);
     }
-
 }

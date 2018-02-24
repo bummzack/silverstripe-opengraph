@@ -4,7 +4,6 @@ namespace TractorCow\OpenGraph;
 
 use SilverStripe\Core\Config\Configurable;
 
-
 /**
  * Simple wrapper for opengraph settings
  */
@@ -133,5 +132,4 @@ class OpenGraph
         $locales = self::get_locales();
         return isset($locales[$locale]);
     }
-
 }

@@ -2,7 +2,6 @@
 
 namespace TractorCow\OpenGraph\Constants;
 
-
 /**
  * Description of OGGenders
  *

@@ -2,7 +2,6 @@
 
 namespace TractorCow\OpenGraph\Extensions;
 
-
 use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\TextField;
 use SilverStripe\ORM\DataExtension;

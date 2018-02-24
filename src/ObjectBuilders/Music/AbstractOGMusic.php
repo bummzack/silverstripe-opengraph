@@ -6,7 +6,6 @@ use TractorCow\OpenGraph\Interfaces\ObjectTypes\Music\IOGMusicSong;
 use TractorCow\OpenGraph\Interfaces\ObjectTypes\Music\Relations\IOGSongAlbum;
 use TractorCow\OpenGraph\ObjectBuilders\OpenGraphBuilder;
 
-
 /**
  * Description of OGMusic
  *
@@ -36,7 +35,7 @@ abstract class AbstractOGMusic extends OpenGraphBuilder
         }
 
         // Handle explicit song/album mapping object
-        if ($value instanceof IOGSongAlbum) /* @var $value IOGSongAlbum */ {
+        if ($value instanceof IOGSongAlbum) { /* @var $value IOGSongAlbum */
             $this->appendRelatedSongList($tags, $namespace, $value->getOGSong());
             $this->AppendTag($tags, "$namespace:disc", $value->getOGDisc());
             $this->AppendTag($tags, "$namespace:track", $value->getOGTrack());

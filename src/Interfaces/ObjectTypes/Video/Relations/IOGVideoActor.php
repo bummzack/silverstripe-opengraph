@@ -5,7 +5,6 @@ namespace TractorCow\OpenGraph\Interfaces\ObjectTypes\Video\Relations;
 use TractorCow\OpenGraph\Interfaces\ObjectTypes\Other\IOGProfile;
 use TractorCow\OpenGraph\Interfaces\ObjectTypes\Video\IOGVideo;
 
-
 /**
  * Represents
  * @author Damian Mooyman

@@ -2,7 +2,6 @@
 
 namespace TractorCow\OpenGraph\ObjectBuilders\Other;
 
-
 use TractorCow\OpenGraph\Interfaces\ObjectTypes\Other\IOGProfile;
 use TractorCow\OpenGraph\ObjectBuilders\OpenGraphBuilder;
 

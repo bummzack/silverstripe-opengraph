@@ -5,7 +5,6 @@ namespace TractorCow\OpenGraph\Interfaces\ObjectTypes\Music;
 use TractorCow\OpenGraph\Interfaces\ObjectTypes\Music\Relations\IOGSongAlbum;
 use TractorCow\OpenGraph\Interfaces\ObjectTypes\Other\IOGProfile;
 
-
 /**
  * @author Damian Mooyman
  */

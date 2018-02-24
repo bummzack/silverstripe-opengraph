@@ -7,7 +7,6 @@ use TractorCow\OpenGraph\Interfaces\ObjectTypes\Video\IOGVideo;
 use TractorCow\OpenGraph\Interfaces\ObjectTypes\Video\Relations\IOGVideoActor;
 use TractorCow\OpenGraph\ObjectBuilders\OpenGraphBuilder;
 
-
 /**
  * @author Damo
  */

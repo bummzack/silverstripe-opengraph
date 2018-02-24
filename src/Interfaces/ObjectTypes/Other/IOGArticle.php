@@ -4,7 +4,6 @@ namespace TractorCow\OpenGraph\Interfaces\ObjectTypes\Other;
 
 use SilverStripe\ORM\FieldType\DBDatetime;
 
-
 /**
  * @author Damian Mooyman
  */

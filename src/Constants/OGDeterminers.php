@@ -2,7 +2,6 @@
 
 namespace TractorCow\OpenGraph\Constants;
 
-
 /**
  * @author Damian Mooyman
  */

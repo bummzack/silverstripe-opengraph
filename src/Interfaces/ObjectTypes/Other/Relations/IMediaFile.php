@@ -2,7 +2,6 @@
 
 namespace TractorCow\OpenGraph\Interfaces\ObjectTypes\Other\Relations;
 
-
 /**
  * Can be used in place of the File object to refer to Video/Image files
  *

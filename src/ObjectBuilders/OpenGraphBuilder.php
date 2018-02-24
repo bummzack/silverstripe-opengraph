@@ -17,7 +17,6 @@ use TractorCow\OpenGraph\Interfaces\ObjectTypes\IOGObjectExplicit;
 use TractorCow\OpenGraph\Interfaces\ObjectTypes\Other\IOGProfile;
 use TractorCow\OpenGraph\Interfaces\ObjectTypes\Other\Relations\IMediaFile;
 
-
 /**
  * @author Damian Mooyman
  */
@@ -70,8 +69,11 @@ class OpenGraphBuilder implements IOpenGraphObjectBuilder
 
         // check tag type
         if (is_scalar($content)) {
-            return $tags .= sprintf("<meta property=\"%s\" content=\"%s\" />\n", Convert::raw2att($name),
-                Convert::raw2att($content));
+            return $tags .= sprintf(
+                "<meta property=\"%s\" content=\"%s\" />\n",
+                Convert::raw2att($name),
+                Convert::raw2att($content)
+            );
         }
 
         trigger_error('Invalid tag type: ' . gettype($content), E_USER_ERROR);
@@ -105,7 +107,9 @@ class OpenGraphBuilder implements IOpenGraphObjectBuilder
             return;
         }
 
-        $tags .= sprintf("<link rel=\"%s\" href=\"%s\" type=\"%s\" />\n", Convert::raw2att($rel),
+        $tags .= sprintf(
+            "<link rel=\"%s\" href=\"%s\" type=\"%s\" />\n",
+            Convert::raw2att($rel),
             Convert::raw2att($link),
             $type
                 ? $type
@@ -136,13 +140,15 @@ class OpenGraphBuilder implements IOpenGraphObjectBuilder
      */
     protected function appendMediaMetaTags(&$tags, $namespace, $value, $https = null, $mimeType = null)
     {
-        if (empty($value))
+        if (empty($value)) {
             return;
+        }
 
         // Handle situation where multiple items are presented
         if ($this->isValueIterable($value)) {
-            foreach ($value as $file)
+            foreach ($value as $file) {
                 $this->appendMediaMetaTags($tags, $namespace, $file, null, $mimeType);
+            }
             return;
         }
 
@@ -173,23 +179,28 @@ class OpenGraphBuilder implements IOpenGraphObjectBuilder
         // Handle image URL being given
         if (is_string($value)) {
             // Populate HTTPS url if $value is set to the HTTPS url
-            if (preg_match('/^https:/i', $value) && empty($https))
+            if (preg_match('/^https:/i', $value) && empty($https)) {
                 $https = $value;
+            }
 
             // Ensure the main image tag only contains the unsecure url
             $value = preg_replace('/^https:/i', 'http:', $value);
 
             // Attempt to auto-detect mime type if missing
-            if (empty($mimeType)) $mimeType = $this->getMimeType($value);
+            if (empty($mimeType)) {
+                $mimeType = $this->getMimeType($value);
+            }
 
             // Append image_src meta tag if not present yet
-            if (preg_match('/^image.*/', $mimeType) && !strstr($tags, 'rel="image_src"'))
+            if (preg_match('/^image.*/', $mimeType) && !strstr($tags, 'rel="image_src"')) {
                 $this->appendLink($tags, 'image_src', $value);
+            }
 
             // Build tags
             $this->AppendTag($tags, $namespace, $value);
-            if ($https)
+            if ($https) {
                 $this->AppendTag($tags, "$namespace:secure_url", $https);
+            }
             $this->AppendTag($tags, "$namespace:type", $mimeType);
             return;
         }
@@ -200,18 +211,21 @@ class OpenGraphBuilder implements IOpenGraphObjectBuilder
 
     protected function appendLocales(&$tags, $locales)
     {
-        if (empty($locales))
+        if (empty($locales)) {
             return;
+        }
 
         // handle case with multiple locales
         if (is_array($locales)) {
             // Loop through all locales
             $mainLocale = array_shift($locales);
             $this->appendLocales($tags, $mainLocale);
-            foreach ($locales as $locale)
+            foreach ($locales as $locale) {
                 $this->AppendTag($tags, 'og:locale:alternate', $locale);
-        } else
+            }
+        } else {
             $this->AppendTag($tags, 'og:locale', $locales);
+        }
     }
 
     protected function appendDefaultMetaTags(&$tags, $object)
@@ -248,11 +262,13 @@ class OpenGraphBuilder implements IOpenGraphObjectBuilder
 
     protected function appendDateTag(&$tags, $name, $date)
     {
-        if (empty($date))
+        if (empty($date)) {
             return;
+        }
 
-        if (!($date instanceof DBDateTime))
+        if (!($date instanceof DBDateTime)) {
             $date = DBDatetime::create_field(DBDatetime::class, $date);
+        }
 
         $this->AppendTag($tags, $name, $date->Rfc3339());
     }
@@ -262,5 +278,4 @@ class OpenGraphBuilder implements IOpenGraphObjectBuilder
         $this->appendDefaultMetaTags($tags, $object);
         $this->appendApplicationMetaTags($tags, $config);
     }
-
 }

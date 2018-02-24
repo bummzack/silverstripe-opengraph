@@ -2,7 +2,6 @@
 
 namespace TractorCow\OpenGraph\ObjectBuilders\Music;
 
-
 use TractorCow\OpenGraph\Interfaces\ObjectTypes\Music\IOGMusicAlbum;
 use TractorCow\OpenGraph\Interfaces\ObjectTypes\Music\IOGMusicSong;
 use TractorCow\OpenGraph\Interfaces\ObjectTypes\Music\Relations\IOGSongAlbum;

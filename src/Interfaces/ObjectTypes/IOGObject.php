@@ -2,7 +2,6 @@
 
 namespace TractorCow\OpenGraph\Interfaces\ObjectTypes;
 
-
 /**
  * Defines a basic open graph object
  * Only non-decorator methods are defined here, as any implementing classes may instead define these methods in a decorator

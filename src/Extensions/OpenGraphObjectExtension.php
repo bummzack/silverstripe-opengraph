@@ -19,7 +19,6 @@ use TractorCow\OpenGraph\Interfaces\ObjectTypes\Other\IOGWebsite;
 use TractorCow\OpenGraph\Interfaces\ObjectTypes\Video\IOGVideo;
 use TractorCow\OpenGraph\OpenGraph;
 
-
 /**
  * Adds open graph functionality to a page or data object
  *
@@ -72,14 +71,17 @@ class OpenGraphObjectExtension extends SiteTreeExtension implements IOGObjectExp
         $type = $this->owner->getOGType();
 
         // Case for non-types
-        if (empty($type)) return null;
+        if (empty($type)) {
+            return null;
+        }
 
         // Determine type, if configured
         $prototype = OpenGraph::get_prototype($type);
-        if (!empty($prototype['tagbuilder']))
+        if (!empty($prototype['tagbuilder'])) {
             $class = $prototype['tagbuilder'];
-        else
+        } else {
             $class = OpenGraph::get_default_tagbuilder();
+        }
 
         // Construct instance from type
         return new $class();
@@ -89,8 +91,9 @@ class OpenGraphObjectExtension extends SiteTreeExtension implements IOGObjectExp
     {
         // Generate tag builder
         $builder = $this->getTagBuilder();
-        if (!$builder)
+        if (!$builder) {
             return;
+        }
 
         $config = SiteConfig::current_site_config();
         // Default tags
@@ -103,7 +106,9 @@ class OpenGraphObjectExtension extends SiteTreeExtension implements IOGObjectExp
      */
     public function getOGType()
     {
-        if ($type = OpenGraph::get_object_type($this->owner)) return $type;
+        if ($type = OpenGraph::get_object_type($this->owner)) {
+            return $type;
+        }
 
         return OGTypes::DefaultType;
     }
@@ -151,7 +156,9 @@ class OpenGraphObjectExtension extends SiteTreeExtension implements IOGObjectExp
         // Check MetaDescription has given content
         if ($this->owner->hasField('MetaDescription')) {
             $description = trim($this->owner->MetaDescription);
-            if (!empty($description)) return $description;
+            if (!empty($description)) {
+                return $description;
+            }
         }
 
         // Intelligent fallback for SiteTree instances
@@ -173,10 +180,11 @@ class OpenGraphObjectExtension extends SiteTreeExtension implements IOGObjectExp
         $locale = i18n::get_locale();
 
         // Check locale is valid
-        if (OpenGraph::is_locale_valid($locale)) return $locale;
+        if (OpenGraph::is_locale_valid($locale)) {
+            return $locale;
+        }
 
         // Return default
         return OpenGraph::get_default_locale();
     }
-
 }

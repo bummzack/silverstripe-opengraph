@@ -2,7 +2,6 @@
 
 namespace TractorCow\OpenGraph\ObjectBuilders\Music;
 
-
 use TractorCow\OpenGraph\Interfaces\ObjectTypes\Music\IOGMusicAlbum;
 
 class OGMusicAlbum extends AbstractOGMusic

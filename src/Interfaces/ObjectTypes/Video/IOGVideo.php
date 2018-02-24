@@ -7,7 +7,6 @@ use TractorCow\OpenGraph\Interfaces\ObjectTypes\Other\IOGProfile;
 use TractorCow\OpenGraph\Interfaces\ObjectTypes\Other\IOGTagged;
 use TractorCow\OpenGraph\Interfaces\ObjectTypes\Video\Relations\IOGVideoActor;
 
-
 /**
  * Represents a video opengraph type
  * @author Damian Mooyman

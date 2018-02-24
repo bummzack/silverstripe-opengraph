@@ -4,7 +4,6 @@ namespace TractorCow\OpenGraph\ObjectBuilders\Video;
 
 use TractorCow\OpenGraph\Interfaces\ObjectTypes\Video\IOGVideoEpisode;
 
-
 /**
  * @author Damo
  */
