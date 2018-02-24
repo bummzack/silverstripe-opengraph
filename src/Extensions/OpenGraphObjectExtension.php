@@ -4,6 +4,8 @@ namespace TractorCow\OpenGraph\Extensions;
 
 use SilverStripe\CMS\Model\SiteTreeExtension;
 use SilverStripe\Control\Director;
+use SilverStripe\Core\Config\Configurable;
+use SilverStripe\Core\Manifest\ModuleResourceLoader;
 use SilverStripe\i18n\i18n;
 use SilverStripe\ORM\FieldType\DBText;
 use SilverStripe\SiteConfig\SiteConfig;
@@ -26,7 +28,15 @@ use TractorCow\OpenGraph\OpenGraph;
  */
 class OpenGraphObjectExtension extends SiteTreeExtension implements IOGObjectExplicit
 {
-    public static $default_image = '/opengraph/images/logo.gif';
+    use Configurable;
+
+    /**
+     * The default image to use
+     *
+     * @config
+     * @var string
+     */
+    private static $default_image = 'tractorcow/silverstripe-opengraph: images/logo.gif';
 
     /**
      * Property for retrieving the opengraph namespace html tag(s).
@@ -130,8 +140,8 @@ class OpenGraphObjectExtension extends SiteTreeExtension implements IOGObjectExp
     public function getOGImage()
     {
         // Since og:image is a required property, provide a reasonable default
-        if (self::$default_image) {
-            return Director::absoluteURL(self::$default_image);
+        if ($image = self::config()->default_image) {
+            return Director::absoluteURL(ModuleResourceLoader::resourceURL($image));
         }
         return '';
     }

@@ -25,7 +25,10 @@
 		"installer-name": "opengraph",
 		"branch-alias": {
 			"4": "4.x-dev"
-		}
+		},
+        "expose": [
+            "images"
+        ]
 	},
 	"scripts": {
 		"lint": "phpcs -s src/"
