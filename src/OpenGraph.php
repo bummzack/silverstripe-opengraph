@@ -2,7 +2,6 @@
 
 namespace TractorCow\OpenGraph;
 
-use SilverStripe\Core\Config\Config;
 use SilverStripe\Core\Config\Configurable;
 
 
@@ -39,7 +38,9 @@ class OpenGraph
     public static function get_prototype($type)
     {
         $types = self::get_config('types');
-        if (isset($types[$type])) return $types[$type];
+        if (isset($types[$type])) {
+            return $types[$type];
+        }
     }
 
     /**
@@ -54,18 +55,20 @@ class OpenGraph
 
         foreach ($types as $type => $details) {
             $interface = $details['interface'];
-            if ($object instanceof $interface) return $type;
+            if ($object instanceof $interface) {
+                return $type;
+            }
         }
     }
 
     /**
      * Retrieves the configured field, or "SiteConfig" if this should be
      * managed through the siteconfig instead of yaml configuration
-     * @return string Value of the configured field
+     * @return mixed Value of the configured field
      */
     public static function get_config($field)
     {
-        return Config::inst()->get('OpenGraph', $field);
+        return self::config()->get($field);
     }
 
     /**
@@ -76,7 +79,7 @@ class OpenGraph
      */
     public static function set_config($field, $value = 'SiteConfig')
     {
-        Config::inst()->update('OpenGraph', $field, $value);
+        self::config()->update($field, $value);
     }
 
     /**
@@ -99,7 +102,7 @@ class OpenGraph
 
     /**
      * Retrieves the default class used to build tags
-     * @return type
+     * @return string type
      */
     public static function get_default_tagbuilder()
     {

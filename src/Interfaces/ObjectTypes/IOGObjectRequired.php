@@ -2,7 +2,7 @@
 
 namespace TractorCow\OpenGraph\Interfaces\ObjectTypes;
 
-
+use SilverStripe\Assets\Image;
 
 
 /**
@@ -15,27 +15,27 @@ namespace TractorCow\OpenGraph\Interfaces\ObjectTypes;
  */
 interface IOGObjectRequired extends IOGObject
 {
-	/**
-	 * Determines the OpenGraph Title
-	 *
-	 * @return string|null|false Title of this object, false to omit this field, or null to fall back to intelligent default
-	 */
-	function getOGTitle();
+    /**
+     * Determines the OpenGraph Title
+     *
+     * @return string|null|false Title of this object, false to omit this field, or null to fall back to intelligent default
+     */
+    function getOGTitle();
 
-	/**
-	 * Determines the OpenGraph type as defined at {@link http://ogp.me/#types}
-	 *
-	 * @link http://ogp.me/#types
-	 * @link http://graph.facebook.com/schema/og/music
-	 * @return string|null|false Title of this object, false to omit this field, or null to fall back to intelligent default
-	 */
-	function getOGType();
+    /**
+     * Determines the OpenGraph type as defined at {@link http://ogp.me/#types}
+     *
+     * @link http://ogp.me/#types
+     * @link http://graph.facebook.com/schema/og/music
+     * @return string|null|false Title of this object, false to omit this field, or null to fall back to intelligent default
+     */
+    function getOGType();
 
-	/**
-	 * Determines the image(s) to use for this object
-	 * Image should be at least 200px by 200px, with 1500px by 1500px preferred, and less than 5MB in size.
-	 *
-	 * @return Image[]|Image|string[]|string The image(s) or url(s) to image(s)
-	 */
-	function getOGImage();
+    /**
+     * Determines the image(s) to use for this object
+     * Image should be at least 200px by 200px, with 1500px by 1500px preferred, and less than 5MB in size.
+     *
+     * @return Image[]|Image|string[]|string The image(s) or url(s) to image(s)
+     */
+    function getOGImage();
 }

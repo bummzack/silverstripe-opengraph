@@ -2,7 +2,7 @@
 
 namespace TractorCow\OpenGraph\Interfaces\ObjectTypes;
 
-
+use SilverStripe\Assets\File;
 
 
 /**
@@ -15,43 +15,43 @@ namespace TractorCow\OpenGraph\Interfaces\ObjectTypes;
  */
 interface IOGObjectExplicit extends IOGObjectRequired
 {
-	/**
-	 * Any attached audio files
-	 * @return File[]|File|string[]|string The file(s) or url(s) to file(s)
-	 */
-	function getOGAudio();
+    /**
+     * Any attached audio files
+     * @return File[]|File|string[]|string The file(s) or url(s) to file(s)
+     */
+    function getOGAudio();
 
-	/**
-	 * Any attached video files
-	 * @return File[]|File|string[]|string The file(s) or url(s) to file(s)
-	 */
-	function getOGVideo();
+    /**
+     * Any attached video files
+     * @return File[]|File|string[]|string The file(s) or url(s) to file(s)
+     */
+    function getOGVideo();
 
-	/**
-	 * Description for this opengraph object
-	 * @return string The description
-	 */
-	function getOGDescription();
+    /**
+     * Description for this opengraph object
+     * @return string The description
+     */
+    function getOGDescription();
 
-	/**
-	 * The word that appears before this object's title in a sentence.
-	 * An enum of (a, an, the, "", auto). If auto is chosen, the
-	 * consumer of your data should chose between "a" or "an".
-	 * Default is "" (blank).
-	 * @return string The determiner
-	 */
-	function getOGDeterminer();
+    /**
+     * The word that appears before this object's title in a sentence.
+     * An enum of (a, an, the, "", auto). If auto is chosen, the
+     * consumer of your data should chose between "a" or "an".
+     * Default is "" (blank).
+     * @return string The determiner
+     */
+    function getOGDeterminer();
 
-	/**
-	 * The locale(s) the opengraph tags are marked up in. Of the format language_TERRITORY. Default is en_US.
-	 * @return string[]|string The list of all locales given, or the sole locale. If multiple values are given the first
-	 * is treated as the default.
-	 */
-	function getOGLocales();
+    /**
+     * The locale(s) the opengraph tags are marked up in. Of the format language_TERRITORY. Default is en_US.
+     * @return string[]|string The list of all locales given, or the sole locale. If multiple values are given the first
+     * is treated as the default.
+     */
+    function getOGLocales();
 
-	/**
-	 * The name of this site
-	 * @return string The site name
-	 */
-	function getOGSiteName();
+    /**
+     * The name of this site
+     * @return string The site name
+     */
+    function getOGSiteName();
 }

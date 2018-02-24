@@ -2,7 +2,7 @@
 
 namespace TractorCow\OpenGraph\Interfaces\ObjectTypes\Other;
 
-
+use TractorCow\OpenGraph\Interfaces\ObjectTypes\IOGObject;
 
 
 /**
@@ -10,23 +10,23 @@ namespace TractorCow\OpenGraph\Interfaces\ObjectTypes\Other;
  */
 interface IOGProfile extends IOGObject
 {
-	/**
-	 * @return string This person's first name
-	 */
-	function getOGFirstName();
+    /**
+     * @return string This person's first name
+     */
+    function getOGFirstName();
 
-	/**
-	 * @return string This person's last name
-	 */
-	function getOGLastName();
+    /**
+     * @return string This person's last name
+     */
+    function getOGLastName();
 
-	/**
-	 * @return string A short unique string to identify them.
-	 */
-	function getOGUserName();
+    /**
+     * @return string A short unique string to identify them.
+     */
+    function getOGUserName();
 
-	/**
-	 * @return string Their gender (male or female only)
-	 */
-	function getOGGender();
+    /**
+     * @return string Their gender (male or female only)
+     */
+    function getOGGender();
 }

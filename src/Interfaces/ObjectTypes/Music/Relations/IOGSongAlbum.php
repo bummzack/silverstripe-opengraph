@@ -1,8 +1,8 @@
 <?php
 
 namespace TractorCow\OpenGraph\Interfaces\ObjectTypes\Music\Relations;
-
-
+use TractorCow\OpenGraph\Interfaces\ObjectTypes\Music\IOGMusicAlbum;
+use TractorCow\OpenGraph\Interfaces\ObjectTypes\Music\IOGMusicSong;
 
 
 /**

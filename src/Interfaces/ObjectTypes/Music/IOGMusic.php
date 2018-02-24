@@ -2,7 +2,7 @@
 
 namespace TractorCow\OpenGraph\Interfaces\ObjectTypes\Music;
 
-
+use TractorCow\OpenGraph\Interfaces\ObjectTypes\IOGObject;
 
 
 /**
