@@ -16,15 +16,15 @@ with Facebook.
 
 ## Requirements
 
- * SilverStripe 3.1
- * PHP 5.3
+ * SilverStripe 4+
+ * PHP 5.6+
 
 ## Installation Instructions
 
- * Extract all files into the 'opengraph' folder under your Silverstripe root, or install using composer
+ * Install using composer
 
 ```bash
-composer require "tractorcow/silverstripe-opengraph" "3.1.*@dev"
+composer require "tractorcow/silverstripe-opengraph" "4@dev"
 ```
 
  * Ensure the namespace is defined in your template with ``` <html $OGNS> ```
