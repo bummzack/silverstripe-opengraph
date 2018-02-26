@@ -35,7 +35,8 @@
 	},
 	"autoload": {
 		"psr-4": {
-			"TractorCow\\OpenGraph\\": "src/"
+			"TractorCow\\OpenGraph\\": "src/",
+			"TractorCow\\OpenGraph\\Tests\\": "tests/"
 		}
 	},
 	"minimum-stability": "dev",
