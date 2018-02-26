@@ -62,7 +62,7 @@ class OpenGraphObjectExtension extends SiteTreeExtension implements IOGObjectExp
         if ($this->owner instanceof IOGProfile) {
             $ns .= ' profile: http://ogp.me/ns/profile#';
         }
-        if ($this->owner instanceof IOGWebsite || $this->owner->getOGType() == OGTypes::DefaultType) {
+        if ($this->owner instanceof IOGWebsite || $this->owner->getOGType() == OGTypes::DEFAULT_TYPE) {
             $ns .= ' website: http://ogp.me/ns/website#';
         }
         $ns .= '"';
@@ -120,7 +120,7 @@ class OpenGraphObjectExtension extends SiteTreeExtension implements IOGObjectExp
             return $type;
         }
 
-        return OGTypes::DefaultType;
+        return OGTypes::DEFAULT_TYPE;
     }
 
     public function getOGTitle()
@@ -181,7 +181,7 @@ class OpenGraphObjectExtension extends SiteTreeExtension implements IOGObjectExp
 
     public function getOGDeterminer()
     {
-        return OGDeterminers::DefaultValue;
+        return OGDeterminers::DEFAULT_VALUE;
     }
 
     public function getOGLocales()

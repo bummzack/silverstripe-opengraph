@@ -31,7 +31,7 @@
         ]
 	},
 	"scripts": {
-		"lint": "phpcs -s src/"
+		"lint": "phpcs -s src/ tests/"
 	},
 	"autoload": {
 		"psr-4": {

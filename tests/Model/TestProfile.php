@@ -2,7 +2,6 @@
 
 namespace TractorCow\OpenGraph\Tests\Model;
 
-
 use SilverStripe\Dev\TestOnly;
 use SilverStripe\ORM\DataObject;
 use TractorCow\OpenGraph\Extensions\OpenGraphObjectExtension;

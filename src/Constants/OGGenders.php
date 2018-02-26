@@ -9,6 +9,6 @@ namespace TractorCow\OpenGraph\Constants;
  */
 class OGGenders
 {
-    const Male = 'male';
-    const Female = 'female';
+    const MALE = 'male';
+    const FEMALE = 'female';
 }

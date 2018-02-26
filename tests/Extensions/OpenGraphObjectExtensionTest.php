@@ -2,7 +2,6 @@
 
 namespace TractorCow\OpenGraph\Tests\Extensions;
 
-
 use SilverStripe\Dev\SapphireTest;
 use TractorCow\OpenGraph\Tests\Model\TestPage;
 use TractorCow\OpenGraph\Tests\Model\TestProfile;

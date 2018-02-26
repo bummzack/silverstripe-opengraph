@@ -6,7 +6,6 @@ use SilverStripe\Core\Config\Config;
 use SilverStripe\Dev\SapphireTest;
 use TractorCow\OpenGraph\OpenGraph;
 
-
 class OpenGraphTest extends SapphireTest
 {
     protected function setUp()

@@ -9,25 +9,25 @@ namespace TractorCow\OpenGraph\Constants;
  */
 class OGTypes
 {
-    const Music_Song = 'music.song';
-    const Music_Album = 'music.album';
-    const Music_Playlist = 'music.playlist';
-    const Music_RadioStation = 'music.radio_station';
+    const MUSIC_SONG = 'music.song';
+    const MUSIC_ALBUM = 'music.album';
+    const MUSIC_PLAYLIST = 'music.playlist';
+    const MUSIC_RADIOSTATION = 'music.radio_station';
 
-    const Video_Movie = 'video.movie';
-    const Video_Episode = 'video.episode';
-    const Video_TVShow = 'video.tv_show';
-    const Video_Other = 'video.other';
+    const VIDEO_MOVIE = 'video.movie';
+    const VIDEO_EPISODE = 'video.episode';
+    const VIDEO_TV_SHOW = 'video.tv_show';
+    const VIDEO_OTHER = 'video.other';
 
-    const Article = 'article';
-    const Book = 'book';
-    const Profile = 'profile';
-    const Website = 'website';
+    const ARTICLE = 'article';
+    const BOOK = 'book';
+    const PROFILE = 'profile';
+    const WEBSITE = 'website';
 
     /**
      * @link http://developers.facebook.com/docs/opengraph/music/
      */
-    const MetaData = 'metadata';
+    const METADATA = 'metadata';
 
-    const DefaultType = self::Website;
+    const DEFAULT_TYPE = self::WEBSITE;
 }

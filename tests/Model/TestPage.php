@@ -13,5 +13,4 @@ class TestPage extends SiteTree implements TestOnly
     ];
 
     private static $table_name = 'OG_TestPage';
-
 }
